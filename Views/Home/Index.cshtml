@@ -1,0 +1,44 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@model List<JohnTable>
+
+<div class="text-center">
+    <h1 class="display-4">Johns</h1>
+    <h2>Appreceation for the Johns that have blessed America and the entire universe </h2>
+    <h4>Sponsored By: <img src="https://th.bing.com/th/id/R.e27bc490d9546daf8defcd9dd18dd3d4?rik=lj%2fxCsXPg%2btLWg&riu=http%3a%2f%2fwww.tradearabia.com%2fsource%2f2017%2f09%2f25%2faws.jpg&ehk=Fp5Us%2bUJZX%2fx8umINPaG7usaHWQkBzKpUOoudG4CVAQ%3d&risl=&pid=ImgRaw&r=0" width="50" /></h4>
+</div>
+<div class="row">
+    <h5>
+        <b>
+            &nbsp; Filter By: &nbsp;&nbsp;&nbsp;<button class="button5"><a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="FilterRating">John</a></button> &nbsp; &nbsp;
+            <button class="button5"> <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="FilterYear">John</a></button>
+        </b>
+    </h5>
+</div>
+
+
+<div class="text-center">
+    <table align="center" class="table table-bordered table-striped">
+
+        <thead class="font-weight-bold">
+            <tr>
+                <td><b>Picture</b></td>
+                <td><b>Name</b></td>
+            </tr>
+        </thead>
+
+        @*now add rows to the table, using a loop*@
+        <tbody>
+            @foreach (JohnTable m in Model)
+            {
+                <tr>
+                    <td><img src="@m.Image" width="190" /></td>
+                    <td style="text-align: center; vertical-align: middle;">
+                        <h1>@m.First_name</h1>  <br />
+                    <h1>@m.Last_name</h1></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
